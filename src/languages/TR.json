@@ -137,7 +137,7 @@
 
 
     "Order-Title": "Siparişlerim",
-    "Order-Date": "Sipariş Tarihi",
+    "Order-Code": "Sipariş Codu",
     "Order-Name": "Sipariş Adı",
     "Order-Amount": "Sipariş Tutarı",
     "Order-Status": "Sipariş Durumu",
