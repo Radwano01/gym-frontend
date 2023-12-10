@@ -88,6 +88,12 @@
                     button:active{
                         transform: scale(0.9);
                     }
+
+                    .error-message{
+                        h2{
+                            color: red;
+                        }
+                    }
                 }
 
                 .option-quantity{
