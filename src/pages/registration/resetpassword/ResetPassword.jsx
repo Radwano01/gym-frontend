@@ -31,7 +31,7 @@ const ResetPassword = () => {
         <br /><br />
         <Navbar type={"slider-navbar"}/>
         <form onSubmit={handleSubmit}>
-            <input type="password" placeholder='New Password' value={newPassword} onChange={(e)=> setNewPassword(e.target.value)}/>
+            <input type="password" placeholder='New Password' required value={newPassword} onChange={(e)=> setNewPassword(e.target.value)}/>
             <button type='submit'>New Password</button><br /> 
         </form>
     </div>
