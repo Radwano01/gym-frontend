@@ -27,7 +27,7 @@ const ForgotPassword = () => {
         <Navbar type={"slider-navbar"}/>
         <form onSubmit={handleSubmit}>
             <h1>Forgot Password</h1>
-            <input type="email" placeholder='Your Email' value={email} onChange={(e)=> setEmail(e.target.value)}/>
+            <input type="email" placeholder='Your Email' required value={email} onChange={(e)=> setEmail(e.target.value)}/>
             <button type='submit'>Forgot Password</button><br />
         </form>
     </div>
