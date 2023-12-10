@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import "./cart.scss"
 import { useDispatch, useSelector } from 'react-redux'
-import { Link} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import {FaTrashAlt } from "react-icons/fa"
 import { ADD_TO_CARD, CALCULATE_SUBTOTAL, CALCULATE_TOTAL_QUANTITY, CLEAR_CART, DECREASE_CART, DELETE_CART } from '../../redux/cartSlice'
 import Navbar from '../../components/navbar/Navbar'
 import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify'
     
   const Cart = () => {
 
@@ -14,7 +15,11 @@ import { useTranslation } from 'react-i18next'
     const cartItems = useSelector((state)=> state.cart.cartItems)
     const cartTotalAmount = useSelector((state)=> state.cart.cartTotalAmount)
     const cartTotalQuantity = useSelector((state)=> state.cart.cartTotalQuantity)
+    const email = window.localStorage.getItem(
+      process.env.REACT_APP_LOCALSTORAGE_EMAIL
+    );
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const increaseCart =(p_id)=>{
       dispatch(ADD_TO_CARD(p_id))
@@ -30,6 +35,14 @@ import { useTranslation } from 'react-i18next'
 
     const clearCart = ()=>{
       dispatch(CLEAR_CART())
+    }
+
+    const navigatePayment = () =>{
+      if(!email){
+        toast.error("You have to login before shopping!!!")
+      }else{
+        navigate("/address-details")
+      }
     }
 
     useEffect(()=>{
@@ -118,7 +131,7 @@ import { useTranslation } from 'react-i18next'
                           <h3>{`TRY ${cartTotalAmount?.toFixed(2)}`}</h3>
                         </div>
                         <p>{t("Cart-Calculated-Checkout")}</p>
-                        <button className='--btn'><a href="/address-details">{t("Cart-Button")}</a></button>
+                        <button className='--btn' onClick={()=> navigatePayment()}>{t("Cart-Button")}</button>
                       </div>
                     </div>
                 </div>
