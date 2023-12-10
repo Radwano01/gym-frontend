@@ -82,7 +82,7 @@ const ProductDetails = () => {
       }
     };
     getProducts()
-  })
+  },[])
   useEffect(() => {
     dispatch(CALCULATE_SUBTOTAL());
     if (selectedColor === "white") {
