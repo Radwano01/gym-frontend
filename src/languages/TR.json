@@ -74,7 +74,9 @@
     "SingleProduct-Quantity": "Miktar",
     "SingleProduct-Button": "Hemen All!",
 
-
+    "SingleProduct-Arm-Error-Message": "Kol boyutu seçmelisiniz",
+    "SingleProduct-Sizes-Error-Message": "Vücut boyutu seçmelisiniz",
+    "SingleProduct-Color-Error-Message": "Renk seçmelisiniz",
     
     "_comment-contact":"contact page",
     "Contact-Title": "HERHANGİ BİR SORUNUZ VAR MI? HADİ KONUŞALIM.",
