@@ -66,7 +66,7 @@ const Orders = () => {
                   <tr>
                     <th>s/n</th>
                     <th>{t("Order-Title")}</th>
-                    <th>{t("Order-Date")}</th>
+                    <th>{t("Order-Code")}</th>
                     <th>{t("Order-Name")}</th>
                     <th>{t("Order-Status")}</th>
                   </tr>
