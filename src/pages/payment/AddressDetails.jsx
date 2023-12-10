@@ -18,9 +18,6 @@ const initialAddressState = {
 
 const AddressDetails = () => {
   const [t] = useTranslation();
-  const email = window.localStorage.getItem(
-    process.env.REACT_APP_LOCALSTORAGE_EMAIL
-  );
 
   const [shippingAddress, SetShippingAddress] = useState({
     ...initialAddressState,
@@ -37,12 +34,8 @@ const AddressDetails = () => {
   };
 
   const handleSubmit = () => {
-    if (!email) {
-      navigate("/registration/login");
-    } else {
-      dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
-      navigate("/payment");
-    }
+    dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
+    navigate("/payment");
   };
 
   return (
