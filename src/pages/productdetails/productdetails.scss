@@ -59,7 +59,6 @@
             }
 
             .options{
-                color: white;
                 display: flex;
                 align-items: baseline;
                 justify-content: center;
@@ -67,6 +66,7 @@
                 width: 100%;
                 padding: 25px 0;
                 .option{
+                    color: white;
                     padding: 15px 0;
                     display: flex;
                     align-items: center;
