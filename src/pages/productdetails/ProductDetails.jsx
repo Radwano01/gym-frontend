@@ -143,7 +143,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
-                      {errorMessage === 2 && (<h2 className="error-message">{t("SingleProduct-Arm-Error-Message")}</h2>)}
+                      {errorMessage === 2 && (<div className="error-message"><h2>{t("SingleProduct-Arm-Error-Message")}</h2></div>)}
                     </div>
                   )}
 
@@ -166,7 +166,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
-                      {errorMessage === 3 && (<h2 className="error-message">{t("SingleProduct-Sizes-Error-Message")}</h2>)}
+                      {errorMessage === 3 && (<div className="error-message"><h2>{t("SingleProduct-Sizes-Error-Message")}</h2></div>)}
                     </div>
                   )}
 
@@ -189,7 +189,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
-                      {errorMessage === 1 && (<h2 className="error-message">{t("SingleProduct-Color-Error-Message")}</h2>)}
+                      {errorMessage === 1 && (<div className="error-message"><h2 className="error-message">{t("SingleProduct-Color-Error-Message")}</h2></div>)}
                     </div>
                   )}
 
