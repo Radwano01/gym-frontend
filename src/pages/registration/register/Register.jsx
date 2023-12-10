@@ -31,9 +31,9 @@
           <Navbar type={"slider-navbar"}/>
           <form onSubmit={handleSubmit}>
               <h1>Register</h1>
-              <input type="text" placeholder='Your Name' value={name} onChange={(e)=> setName(e.target.value)}/>
-              <input type="email" placeholder='Your Email' value={email} onChange={(e)=> setEmail(e.target.value)}/>
-              <input type="password" placeholder='Your Password' value={password} onChange={(e)=> setPassword(e.target.value)}/>
+              <input type="text" placeholder='Your Name' required value={name} onChange={(e)=> setName(e.target.value)}/>
+              <input type="email" placeholder='Your Email' required value={email} onChange={(e)=> setEmail(e.target.value)}/>
+              <input type="password" placeholder='Your Password' required value={password} onChange={(e)=> setPassword(e.target.value)}/>
               <button type='submit'>Register</button><br />
               <a href='/registration/login'>You  have an account?</a>  
           </form>
