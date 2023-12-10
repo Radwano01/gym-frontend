@@ -34,7 +34,7 @@ const FirstPaymentWay = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      const response = await axios.post(`https://gym-api-rhht.onrender.com/api/orders/order`, {
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/orders/order`, {
         userID: userID,
         name: name,
         email: email,
