@@ -22,7 +22,8 @@ const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [image, setImage] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(false)
 
   const negative = (e) => {
     if (quantity === 1) {
@@ -41,11 +42,11 @@ const ProductDetails = () => {
 
   const addCart = (product) => {
     if (selectedColor === "") {
-      alert("select a color please");
+      setErrorMessage(1)
     } else if (selectedArmsSize === "") {
-      alert("select a arm size please");
+      setErrorMessage(2)
     } else if (selectedSize === "") {
-      alert("select a size please");
+      setErrorMessage(3)
     } else {
       dispatch(
         ADD_TO_CARD({
@@ -129,10 +130,9 @@ const ProductDetails = () => {
                       <select
                         onChange={(e) => setSelectedArmsSize(e.target.value)}
                         value={selectedArmsSize}
-                        required
                       >
                         <option value="" disabled selected>
-                          Kol
+                          {t("SingleProduct-Arm-Size")}
                         </option>
                         {product.p_arms
                           .slice(1, -1)
@@ -143,6 +143,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
+                      {errorMessage === 2 && (<h2 color="red">{t("SingleProduct-Arm-Error-Message")}</h2>)}
                     </div>
                   )}
 
@@ -152,7 +153,6 @@ const ProductDetails = () => {
                       <select
                         onChange={(e) => setSelectedSize(e.target.value)}
                         value={selectedSize}
-                        required
                       >
                         <option value="" disabled selected>
                           sizes
@@ -166,6 +166,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
+                      {errorMessage === 3 && (<h2 color="red">{t("SingleProduct-Sizes-Error-Message")}</h2>)}
                     </div>
                   )}
 
@@ -175,7 +176,6 @@ const ProductDetails = () => {
                       <select
                         onChange={(e) => setSelectedColor(e.target.value)}
                         value={selectedColor}
-                        required
                       >
                         <option value="" disabled selected>
                           colors
@@ -189,6 +189,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
+                      {errorMessage === 1 && (<h2 color="red">{t("SingleProduct-Color-Error-Message")}</h2>)}
                     </div>
                   )}
 
