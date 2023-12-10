@@ -82,7 +82,7 @@ const ProductDetails = () => {
       }
     };
     getProducts()
-  },[])
+  })
   useEffect(() => {
     dispatch(CALCULATE_SUBTOTAL());
     if (selectedColor === "white") {
@@ -143,7 +143,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
-                      {errorMessage === 2 && (<h2 color="red">{t("SingleProduct-Arm-Error-Message")}</h2>)}
+                      {errorMessage === 2 && (<h2 className="error-message">{t("SingleProduct-Arm-Error-Message")}</h2>)}
                     </div>
                   )}
 
@@ -166,7 +166,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
-                      {errorMessage === 3 && (<h2 color="red">{t("SingleProduct-Sizes-Error-Message")}</h2>)}
+                      {errorMessage === 3 && (<h2 className="error-message">{t("SingleProduct-Sizes-Error-Message")}</h2>)}
                     </div>
                   )}
 
@@ -189,7 +189,7 @@ const ProductDetails = () => {
                             </option>
                           ))}
                       </select>
-                      {errorMessage === 1 && (<h2 color="red">{t("SingleProduct-Color-Error-Message")}</h2>)}
+                      {errorMessage === 1 && (<h2 className="error-message">{t("SingleProduct-Color-Error-Message")}</h2>)}
                     </div>
                   )}
 
