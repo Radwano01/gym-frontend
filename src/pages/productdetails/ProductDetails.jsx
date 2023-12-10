@@ -61,6 +61,7 @@ const ProductDetails = () => {
           code: product.p_code,
         })
       );
+      toast.success("product added to cart")
     }
   };
 
