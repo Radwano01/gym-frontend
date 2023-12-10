@@ -73,7 +73,7 @@
     "SingleProduct-Quantity": "Quantity",
     "SingleProduct-Button": "Add To Cart!",
 
-    "SingleProduct-Arm-Error-Message":"You must Select Arm size",
+    "SingleProduct-Arm-Error-Message":"You must Select size",
     "SingleProduct-Sizes-Error-Message":"You must Select Body size",
     "SingleProduct-Color-Error-Message":"You must Select Color",
 
