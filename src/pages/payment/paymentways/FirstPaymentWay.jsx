@@ -30,7 +30,6 @@ const FirstPaymentWay = () => {
   });
   const handleSubmit = async (e) => {
     const itemsWithoutImages = items?.map(({ image, ...rest }) => rest);
-    console.log(itemsWithoutImages)
 
     e.preventDefault();
     try {
@@ -50,7 +49,7 @@ const FirstPaymentWay = () => {
       setLoading(false)
       if(response && response.data && response.length > 0){
         window.localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE_EMAIL);
-        window.localStorage.removeItem(process.env.LOCALSTORAGE_CARTITEMS);
+        window.localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE_CARTITEMS);
       }
       navigate("/orders");
     } catch (err) {
