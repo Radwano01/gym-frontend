@@ -136,7 +136,7 @@
 
 
     "Order-Title":"My Orders",
-    "Order-Date":"Order Date",
+    "Order-Code":"Order Code",
     "Order-Name":"Order name",
     "Order-Amount":"Order Amount",
     "Order-Status":"Order Status",
