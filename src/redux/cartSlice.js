@@ -19,7 +19,7 @@
           const tempProduct = {...action.payload, cartTotalQuantity:1}
           state.cartItems.push(tempProduct)
         }
-        localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+        localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_CARTITEMS, JSON.stringify(state.cartItems));
       },    
 
       DECREASE_CART: (state, action) => {
@@ -29,13 +29,13 @@
           state.cartItems[productIndex].cartTotalQuantity -= 1;
           
           // Update localStorage with the updated cartItems
-          localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+          localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_CARTITEMS, JSON.stringify(state.cartItems));
         } else if (state.cartItems[productIndex].cartTotalQuantity === 1) {
           // If quantity becomes 1, remove the item from the cart
           state.cartItems.splice(productIndex, 1);
           
           // Update localStorage with the updated cartItems
-          localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+          localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_CARTITEMS, JSON.stringify(state.cartItems));
         }
       },
       DELETE_CART: (state, action) => {
@@ -44,11 +44,11 @@
           (item) => !(item.color === color && item.arm === arm && item.size === size)
         );
         state.cartItems = updatedCartItems;
-        localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+        localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_CARTITEMS, JSON.stringify(updatedCartItems));
       },
       
       CLEAR_CART:(state)=>{
-        localStorage.removeItem("cartItems")
+        localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE_CARTITEMS)
         state.cartItems = []
       },
       CALCULATE_SUBTOTAL:(state)=>{
